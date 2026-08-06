@@ -1,0 +1,1731 @@
+#musicSection{
+    display:none;
+}
+/* =======================================================
+   GOOGLE FONT
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =======================================================
+   RESET
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =======================================================
+   FULL SCREEN SECTIONS
+======================================================= */
+
+section{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* =======================================================
+   PASSWORD BACKGROUND
+   Replace password-bg.jpg with your brother's image
+======================================================= */
+
+#passwordPage{
+
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("images.jpeg");
+
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+
+    animation:bgZoom 25s infinite alternate;
+
+}
+
+/* =======================================================
+   SURPRISE BACKGROUND
+======================================================= */
+
+#surprisePage{
+
+    display:none;
+
+    background:
+    linear-gradient(rgba(25,10,60,.55),rgba(25,10,60,.55)),
+    url("images/surprise-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:bgZoom 25s infinite alternate;
+
+}
+
+/* =======================================================
+   MUSIC BACKGROUND
+======================================================= */
+
+#musicSection{
+
+    display:none;
+
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("images/music-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:bgZoom 25s infinite alternate;
+
+}
+
+/* =======================================================
+   LETTER BACKGROUND
+======================================================= */
+
+#letterSection{
+
+    display:none;
+
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("images/letter-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:bgZoom 25s infinite alternate;
+
+}
+
+/* =======================================================
+   BACKGROUND ZOOM
+======================================================= */
+
+@keyframes bgZoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+/* =======================================================
+   LOADING SCREEN
+======================================================= */
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#020617;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+}
+
+.loader-box h1{
+
+    font-size:90px;
+
+    animation:bounce 2s infinite;
+
+}
+
+.loader-box h2{
+
+    margin:20px 0;
+
+    font-size:30px;
+
+}
+
+.progress{
+
+    width:320px;
+
+    height:10px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#333;
+
+    margin:auto;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#ff0080,#ff9f43);
+
+}
+
+#loadingText{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+}
+
+@keyframes bounce{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* =======================================================
+   MUSIC BUTTON
+======================================================= */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+    color:white;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 0 25px rgba(255,0,170,.45);
+
+    z-index:9999;
+
+    transition:.35s;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.1) rotate(10deg);
+
+}
+
+/* =======================================================
+   STARS
+======================================================= */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+#stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    60px 80px white,
+    150px 200px white,
+    250px 120px white,
+    350px 250px white,
+    480px 160px white,
+    620px 90px white,
+    760px 240px white,
+    920px 110px white,
+    1080px 180px white,
+    1240px 60px white,
+    1400px 220px white,
+    1560px 120px white,
+    1700px 260px white;
+
+    animation:twinkle 4s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.3;
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1.8);
+
+    }
+
+}
+
+/* =======================================================
+   FLOATING HEARTS
+======================================================= */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+#hearts::before{
+
+    content:"❤️ ❤️ 💖 💕 💗 ❤️ 💖 💕";
+
+    position:absolute;
+
+    left:-10%;
+
+    bottom:-100px;
+
+    font-size:32px;
+
+    letter-spacing:60px;
+
+    animation:heartMove 18s linear infinite;
+
+}
+
+@keyframes heartMove{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-130vh);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =======================================================
+   SPARKLES
+======================================================= */
+
+#sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,rgba(255,255,255,.25) 1px,transparent 2px);
+
+    background-size:80px 80px;
+
+    opacity:.25;
+
+    animation:sparkleMove 12s linear infinite;
+
+}
+
+@keyframes sparkleMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:250px 250px;
+
+    }
+
+}
+
+/* =======================================================
+   PASSWORD CARD
+======================================================= */
+
+.password-card{
+
+    width:430px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.12);
+
+    -filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    z-index:10;
+
+}
+
+/* =======================================================
+   GIFT ICON
+======================================================= */
+
+.gift-icon{
+
+    font-size:90px;
+
+    animation:giftBounce 2s infinite;
+
+}
+
+@keyframes giftBounce{
+
+    50%{
+
+        transform:translateY(-12px) rotate(-6deg);
+
+    }
+
+}
+
+/* =======================================================
+   TITLES
+======================================================= */
+
+.password-card h1{
+
+    margin-top:10px;
+
+    font-size:42px;
+
+    color:#ffffff;
+
+}
+
+.password-card h2{
+
+    margin-top:10px;
+
+    color:#ff8fd3;
+
+    font-size:32px;
+
+}
+
+.password-card p{
+
+    margin:20px 0;
+
+    line-height:28px;
+
+    color:#eeeeee;
+
+}
+
+/* =======================================================
+   PASSWORD INPUT
+======================================================= */
+
+#password{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    margin-top:15px;
+
+    font-size:17px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+}
+
+#password::placeholder{
+
+    color:#dddddd;
+
+}
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+#hintBtn,
+#unlockBtn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+#hintBtn{
+
+    background:#ffc107;
+
+    color:#222;
+
+}
+
+#unlockBtn{
+
+    background:linear-gradient(135deg,#ff0080,#8a2be2);
+
+    color:white;
+
+}
+
+#hintBtn:hover,
+#unlockBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(255,0,170,.35);
+
+}
+
+#hintText{
+
+    margin-top:12px;
+
+    color:#ffe082;
+
+    font-weight:500;
+
+}
+
+/* =======================================================
+   GIFT OPENING SECTION
+======================================================= */
+
+#giftSection{
+
+    display:none;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("images/password-bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    text-align:center;
+
+}
+
+
+.gift-container{
+
+    text-align:center;
+
+    animation:giftAppear 1s ease;
+
+}
+
+
+#giftBox{
+
+    font-size:150px;
+
+    cursor:pointer;
+
+    animation:shakeGift 1.5s infinite;
+
+}
+
+
+@keyframes shakeGift{
+
+    0%{
+
+        transform:rotate(0);
+
+    }
+
+    25%{
+
+        transform:rotate(8deg);
+
+    }
+
+    50%{
+
+        transform:rotate(-8deg);
+
+    }
+
+    75%{
+
+        transform:rotate(5deg);
+
+    }
+
+    100%{
+
+        transform:rotate(0);
+
+    }
+
+}
+
+
+.gift-container h1{
+
+    font-size:38px;
+
+    margin-top:30px;
+
+    text-shadow:
+    0 0 20px #ff7bd5;
+
+}
+
+
+.gift-container p{
+
+    font-size:20px;
+
+}
+
+
+/* =======================================================
+   SECTION TITLES
+======================================================= */
+
+
+.section-title{
+
+    font-size:45px;
+
+    text-align:center;
+
+    text-shadow:
+
+    0 0 15px #ff5fd7;
+
+    margin-bottom:15px;
+
+}
+
+
+.section-sub{
+
+    font-size:18px;
+
+    color:#eee;
+
+    margin-bottom:50px;
+
+    text-align:center;
+
+}
+
+
+/* =======================================================
+   SURPRISE CARDS
+======================================================= */
+
+
+.card-container{
+
+    width:90%;
+
+    max-width:1000px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    z-index:5;
+
+}
+
+
+
+.card{
+
+    height:250px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+
+    background:
+
+    rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+    cursor:pointer;
+
+
+    transition:.5s;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.35);
+
+
+}
+
+
+
+.card .icon{
+
+    font-size:75px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card h2{
+
+    font-size:28px;
+
+}
+
+
+
+.card p{
+
+    margin-top:10px;
+
+    color:#ddd;
+
+}
+
+
+
+.card:hover{
+
+    transform:
+
+    translateY(-15px)
+    scale(1.05);
+
+
+    background:
+
+    rgba(255,255,255,.22);
+
+
+    box-shadow:
+
+    0 25px 60px
+
+    rgba(255,0,170,.45);
+
+}
+
+
+
+/* =======================================================
+   NEXT BUTTONS
+======================================================= */
+
+
+.nextSection{
+
+    margin-top:50px;
+
+}
+
+
+.nextSection button{
+
+    padding:18px 45px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    cursor:pointer;
+
+
+    font-size:20px;
+
+
+    font-weight:600;
+
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff0080,
+    #8a2be2
+    );
+
+
+    box-shadow:
+
+    0 10px 30px
+
+    rgba(255,0,150,.4);
+
+
+    transition:.4s;
+
+}
+
+
+
+.nextSection button:hover{
+
+    transform:
+
+    scale(1.08);
+
+
+    box-shadow:
+
+    0 20px 50px
+
+    rgba(255,0,150,.7);
+
+}
+
+
+
+/* =======================================================
+   CARD FLOAT ANIMATION
+======================================================= */
+
+
+.card:nth-child(1){
+
+    animation:cardFloat 4s infinite;
+
+}
+
+
+.card:nth-child(2){
+
+    animation:cardFloat 4s infinite .5s;
+
+}
+
+
+.card:nth-child(3){
+
+    animation:cardFloat 4s infinite 1s;
+
+}
+
+
+.card:nth-child(4){
+
+    animation:cardFloat 4s infinite 1.5s;
+
+}
+
+
+
+@keyframes cardFloat{
+
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+
+}
+
+/* =======================================================
+   MUSIC SECTION
+======================================================= */
+
+.music-container{
+
+    width:90%;
+
+    max-width:1000px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+/* =======================================================
+   MUSIC CARD
+======================================================= */
+
+
+.music-card{
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+
+    rgba(255,255,255,.12);
+
+    backdrop-filter:none;
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.4);
+
+    text-align:center;
+
+}
+
+
+
+.musicIcon{
+
+    font-size:80px;
+
+    animation:
+
+    musicFloat 3s infinite;
+
+}
+
+
+
+@keyframes musicFloat{
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+
+.music-card h2{
+
+    margin:20px 0;
+
+    font-size:30px;
+
+}
+
+
+
+.music-card p{
+
+    color:#ddd;
+
+}
+
+
+
+/* =======================================================
+   PLAY BUTTON
+======================================================= */
+
+
+.playBtn,
+.songBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff4ecd,
+    #7b2cff
+    );
+
+
+    color:white;
+
+    border-radius:50px;
+
+    padding:12px 30px;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+
+
+.playBtn:hover,
+.songBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* =======================================================
+   SONG LIST
+======================================================= */
+
+
+.song{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    margin:15px 0;
+
+    border-radius:20px;
+
+    background:
+
+    rgba(255,255,255,.1);
+
+}
+
+
+
+.song span{
+
+    font-size:18px;
+
+}
+
+
+
+/* =======================================================
+   LETTER SECTION
+======================================================= */
+
+
+.envelope{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    animation:
+
+    envelopeMove 3s infinite;
+
+}
+
+
+
+@keyframes envelopeMove{
+
+    50%{
+
+        transform:
+
+        translateY(-20px)
+
+        rotate(5deg);
+
+    }
+
+}
+
+
+
+
+.letter{
+
+    width:80%;
+
+    max-width:750px;
+
+    margin-top:30px;
+
+    padding:45px;
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.5);
+
+
+}
+
+
+
+.letter h1{
+
+    color:#ff9ddd;
+
+    margin-bottom:25px;
+
+}
+
+
+
+#typingText{
+
+    min-height:150px;
+
+    line-height:35px;
+
+    font-size:18px;
+
+}
+
+
+
+/* =======================================================
+   LETTER PHOTOS
+======================================================= */
+
+
+.letterPhotos{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+
+
+.letterPhotos img{
+
+    width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+}
+
+
+
+.letterPhotos img:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* =======================================================
+   POPUP DESIGN
+======================================================= */
+
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:10000;
+
+}
+
+
+
+.popup-content{
+
+    width:90%;
+
+    max-width:700px;
+
+    padding:35px;
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:30px;
+
+
+    text-align:center;
+
+
+    animation:
+
+    popupShow .5s ease;
+
+}
+
+
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+.close{
+
+    position:absolute;
+
+    right:30px;
+
+    top:20px;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+}
+
+
+
+.popup video{
+
+    width:100%;
+
+    border-radius:20px;
+
+}
+
+/* =======================================================
+   FIREWORKS CANVAS
+======================================================= */
+
+#fireworks{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+
+
+/* =======================================================
+   CONFETTI
+======================================================= */
+
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+
+
+.confetti-piece{
+
+    position:absolute;
+
+    width:12px;
+
+    height:25px;
+
+    top:-30px;
+
+    animation:confettiFall linear forwards;
+
+}
+
+
+
+@keyframes confettiFall{
+
+
+    from{
+
+        transform:
+
+        translateY(0)
+
+        rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:
+
+        translateY(110vh)
+
+        rotate(720deg);
+
+    }
+
+
+}
+
+
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
+
+footer{
+    position:fixed;
+    bottom:15px;
+    left:0;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:16px;
+    z-index:999;
+    background:transparent;
+}
+
+
+
+/* =======================================================
+   GLOW ANIMATION
+======================================================= */
+
+
+.glow{
+
+    animation:
+
+    glowEffect 2s infinite alternate;
+
+}
+
+
+
+@keyframes glowEffect{
+
+
+    from{
+
+        filter:
+
+        drop-shadow(0 0 5px #fff);
+
+    }
+
+
+    to{
+
+        filter:
+
+        drop-shadow(0 0 30px #ff4fd8);
+
+    }
+
+
+}
+
+
+
+/* =======================================================
+   RESPONSIVE DESIGN
+======================================================= */
+
+
+@media(max-width:900px){
+
+
+    .password-card{
+
+        padding:30px;
+
+    }
+
+
+
+    .password-card h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .section-title{
+
+        font-size:34px;
+
+    }
+
+
+
+    .card-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .music-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .letterPhotos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+    #musicBtn{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:24px;
+
+    }
+
+
+
+    .gift-icon{
+
+        font-size:70px;
+
+    }
+
+
+
+    .card{
+
+        height:200px;
+
+    }
+
+
+
+    .card .icon{
+
+        font-size:55px;
+
+    }
+
+
+
+    .music-card{
+
+        padding:25px;
+
+    }
+
+
+
+    .letter{
+
+        padding:25px;
+
+        width:90%;
+
+    }
+
+
+
+    .letterPhotos{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+
+
+/* =======================================================
+   SMOOTH PAGE TRANSITION
+======================================================= */
+
+
+.fadeIn{
+
+    animation:
+
+    fadePage 1s ease forwards;
+
+}
+
+
+
+@keyframes fadePage{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+/* =======================================================
+   HIDDEN CLASS
+======================================================= */
+
+
+.hidden{
+
+    display:none !important;
+
+}
